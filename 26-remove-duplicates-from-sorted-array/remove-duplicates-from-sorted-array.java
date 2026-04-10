@@ -3,21 +3,17 @@ class Solution {
         int n = nums.length;
         int left = 0 ;
         int right = 1;
-        int ans= 1;
-
-        if(n==0) return 0;
-
+    
         while(right < n){
-            if(nums[right] != nums[right - 1]){
-                nums[left+1] = nums[right];
+            if(nums[right] != nums[left]){ 
                 left++;
-                ans += 1;
+                nums[left] = nums[right];
                 right++;
             }
             else{
                 right++;
             }
-        }return ans;
+        }return left + 1;
         
     }
 }
